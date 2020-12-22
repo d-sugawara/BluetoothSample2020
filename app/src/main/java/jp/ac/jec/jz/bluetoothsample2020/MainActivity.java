@@ -152,10 +152,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //mConnectionThread.start();
 
             // UUIDとってみる
-            ParcelUuid[] uuidList = device.getUuids();
-            for (ParcelUuid id: uuidList) {
-                Log.d(TAG, "BluetoothService: UUID: " + id.toString());
-            }
+//            ParcelUuid[] uuidList = device.getUuids();
+//            for (ParcelUuid id: uuidList) {
+//                Log.d(TAG, "BluetoothService: UUID: " + id.toString());
+//            }
         }
 
         /**
@@ -179,7 +179,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return;
             }
 
-            // ステータス設定
             setState( STATE_CONNECT_START );
         }
 
@@ -192,10 +191,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // 接続中以外は、処理しない。
                 return;
             }
-
-            // ステータス設定
             setState( STATE_DISCONNECT_START );
-
             mConnectionThread.cancel();
         }
     }
