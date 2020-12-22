@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // 参考：https://jellyware.jp/kurage/bluejelly/uuid.html
         // private static final UUID UUID_SPP = UUID.fromString( "00001101-0000-1000-8000-00805f9b34fb" );
 
-        // CF Shutter はHID（0x1812）を使うらしい。
+        // CF Shutter はHID（0x1812）を使うらしい。が、これでもCONNECT_FAILED。
         public static final UUID UUID_HID = UUID.fromString("00001812-0000-1000-8000-00805f9b34fb");
 
         // 定数
@@ -149,13 +149,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             // 接続時処理用スレッドの作成と開始
             mConnectionThread = new ConnectionThread( device );
-            //mConnectionThread.start();
+            mConnectionThread.start();
 
-            // UUIDとってみる
-//            ParcelUuid[] uuidList = device.getUuids();
-//            for (ParcelUuid id: uuidList) {
-//                Log.d(TAG, "BluetoothService: UUID: " + id.toString());
-//            }
+            // つかえるUUIDとってみる
+            ParcelUuid[] uuidList = device.getUuids();
+            for (ParcelUuid id: uuidList) {
+                Log.d(TAG, "BluetoothService: UUID: " + id.toString());
+            }
         }
 
         /**
