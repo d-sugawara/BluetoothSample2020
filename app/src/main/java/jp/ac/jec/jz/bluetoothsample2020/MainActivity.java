@@ -231,7 +231,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             break;
                         case BluetoothService.STATE_CONNECT_FAILED:            // 接続失敗
                             Toast.makeText( MainActivity.this, "Failed to connect to the device.", Toast.LENGTH_SHORT ).show();
-                            Log.d(TAG, "handleMessage: " + msg);
+                            Log.d(TAG, "handleMessage: Failed to connect: " + msg);
                             break;
                         case BluetoothService.STATE_CONNECTED:    // 接続完了
                             // GUIアイテムの有効無効の設定
