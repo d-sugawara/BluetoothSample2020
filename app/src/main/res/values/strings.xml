@@ -9,10 +9,14 @@
     <!-- MainActivity ラベル用 -->
     <string name="device_name">Device Name : </string>
     <string name="device_address">Device Address : </string>
+    <!-- step.3 add↓ -->
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
 
     <!-- DeviceListActivity トースト用 -->
     <string name="unknown_device">Unknown device</string>
     <!-- DeviceListActivity メニュー用 -->
     <string name="scan">Scan</string>
     <string name="stop">Stop</string>
+
 </resources>
